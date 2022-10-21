@@ -1,0 +1,128 @@
+html,
+body,
+div {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  touch-action: none;
+}
+.bottom{
+    position:fixed;
+    bottom: 0%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, 0%);
+}
+
+.bar{
+    margin: auto;
+  display:block;
+  width:50vw;
+  height:10vh;
+  min-height: 50px;
+  background-color: rgb(255,165,0);
+  opacity:0.8;
+  display:flex;
+  justify-content: space-between;
+  border-radius: 2vw 2vw 0px 0px;
+}
+
+.bar::before,.selection::before{
+    content: "";
+}
+.bar::after,.selection::after{
+    content:"";
+}
+.pencil,.eraser{
+    height:100%
+}
+.outer{
+    width: max(10vw,10vh);
+    display:flex;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+}
+.outer:hover{
+    transform: translate(0vh, -40%);
+    border-radius: 8vw;
+    background-color: rgb(255,165,0);
+}
+
+.active{
+    transform: translate(0px, -4vh);
+    border-radius: 8vw;
+    background-color: rgb(255,165,0);
+}
+
+.selection{
+    margin: auto;
+    display:block;
+    width: 50vw;
+    opacity:0.8;
+    display:flex;
+    justify-content: space-between;
+    transform: translate(0px,-4vh);
+}
+
+.box-color{
+    width: 50vw;
+    height:4vw;
+    min-height: 30px;
+    background-color: wheat;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2vw;
+    
+}
+.box-color::before{
+    content: "";
+}
+.box-color::after{
+    content: "";
+}
+
+.slider{
+    width: 50vw;
+}
+.color{
+    display: inline-block;
+    width:3vw;
+    height:3vw;
+    border-radius: 50%;
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.black{
+    background-color: black;
+}
+.yellow{
+    background-color: yellow;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+@media only screen and (max-width:500px){
+    .bar{
+        width:100vw;
+    }
+    .selection{
+        width: 100vw;
+    }
+    .box-color{
+        width:50vw;
+    }
+    .color{
+        width:7vw;
+        height: 7vw;
+    }
+}
